@@ -1,0 +1,70 @@
+<header>
+    <style>
+        div {
+            display: flex;
+            height: 20vh;
+            justify-content: center;
+            align-items: center;
+            margin: 50px;
+
+            & p {
+                opacity: 0;
+                font-size: 1.5rem;
+                position: absolute;
+                bottom: 600;
+                animation: aparecer 5s ease-in both;
+                animation-delay: 40s;
+            }
+        }
+        h1 {
+            position: relative;
+            display: inline-block;
+            padding: 30px;
+            color: #000000;
+            font-size: 5em;
+        }
+        
+        h1::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            border-radius:20px;
+            background: linear-gradient(20deg, #ff0000, #ff9a02, #ffee00, #55ff07) ;
+            z-index: -1;
+        }
+        .dot{
+            animation: cargando 3s infinite ease-in-out;
+        }
+        .dot:nth-child(2) {
+            animation-delay: .5s;
+        }
+        .dot:nth-child(3) {
+            animation-delay: 1s;
+        }
+        @keyframes cargando {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+        @keyframes aparecer {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+    </style>
+</header>
+<div>
+    <h1>Cargando<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span></h1>
+    <p>En realidad no va a cargar nada... xd</p>
+</div>
+
